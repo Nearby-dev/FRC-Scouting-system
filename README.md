@@ -13,7 +13,7 @@ This is a scouting system for FRC that was developed with the intention of not n
 
 Open the project directory and install the necessary libraries using:
 ```javascript
-npm install express body-parser fs
+npm install express body-parser fs cors
 ```
 
 ## How-to-use
