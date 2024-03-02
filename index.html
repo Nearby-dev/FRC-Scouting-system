@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scout</title>  
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="img\note.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body class="body">
+    
+    <section class="title" >
+        <img src="img\crescendo.png">
+        <div class="title-text">
+            <h2 class="title-name">Scouting App</h2>
+            <p class="title-team">SESI SENAI SHARKS #9199</p>
+            
+        </div>
+        
+        <div class="header-buttons">
+            <button id="enviar" class="header-button">
+                <div class="svg-wrapper">
+                <img src="img/send.png" style="width: 20px;">
+                </div>
+            <span>Enviar</span>
+            </button>
+        <button class="refresh" id="refresh">
+            <img src="img\refresh.svg" alt="" style="width: 40px;filter: invert();">
+        </button>
+        </div>
+
+    </section>
+    <section class="team-match-selection" >
+        <select id="team-selection" class="selection">
+            <option>Equipe</option>
+        </select>
+
+        <select id="match-selection"class="selection">
+            <option>Round</option>
+        </select>
+    </section>
+      
+    <section class="robot-state" >
+        <button id="auto-id" class="auto-button" type="button"><span>Autônomo</span></button>
+        <button id="teleop-id" class="teleop-button" type="button"><span>Teleop</span></button>
+        <button id="endgame-id"class="endgame-button" type="button"><span>Endgame</span></button>
+    </section>
+    
+    <!-- ======================= SEÇÃO AUTONOMO ======================= -->
+    <section id="auto" class="tela">
+        <div class ="autonomo">
+            <div>
+                <h1 class="state-title">Autônomo</h1>
+            </div>
+
+            <div class="state-content">
+
+                <div class="measurement-countainer">
+                    <h2 class="measurement-title">SPEAKER</h2>
+                    <img src="img\note.png" class="note-image">
+                    <div class="measurement-grid">
+                        <div class="parameter-values">
+                            <h2 class="parameter-value-subtitle">ACERTOS</h2>
+                            <h2 class="parameter-value" id="speaker-auto-check">0</h2>
+                        </div>
+                        <div class="parameter-values">
+                            <h2 class="parameter-value-subtitle">ERROS</h2>
+                            <h1 class="parameter-value" id="speaker-auto-wrong">0</h1>
+                        </div>
+                    </div>
+                    <div class="global-buttons">
+                        <div class="check-wrong-buttons">
+                            <button class="measurement-buttons" id="speaker-auto-wrong-plus">
+                                <img src="img\up.svg" alt="" style="filter: invert();">
+                            </button>
+                            <button class="measurement-buttons" id="speaker-auto-wrong-minus">
+                                <img src="img\down.svg" alt="" style="filter: invert();">
+                            </button>
+                        </div>
+                        </div>
+                        <div class="check-wrong-buttons">
+                            <button class="measurement-buttons" id="speaker-auto-check-plus">
+                                <img src="img\up.svg" alt="" style="filter: invert();">
+                            </button>
+                            <button class="measurement-buttons" id="speaker-auto-check-minus">
+                                <img src="img\down.svg" alt="" style="filter: invert();">
+                            </button>
+                        </div>
+                    </div>
+
+
+                <div class="measurement-countainer">
+                    <h2 class="measurement-title">AMP</h2>
+                    <img src="img\note.png" class="note-image">
+                    <div class="measurement-grid">
+                        <div class="parameter-values">
+                            <h2 class="parameter-value-subtitle">ACERTOS</h2>
+                            <h2 class="parameter-value" id="amp-auto-check">0</h2>
+                        </div>
+                        <div class="parameter-values">
+                            <h2 class="parameter-value-subtitle">ERROS</h2>
+                            <h1 class="parameter-value" id="amp-auto-wrong">0</h1>
+                        </div>
+                    </div>
+                    <div class="global-buttons">
+                        <div class="check-wrong-buttons">
+                            <button class="measurement-buttons" id="amp-auto-wrong-plus">
+                                <img src="img\up.svg" alt="" style="filter: invert();">
+                            </button>
+                            <button class="measurement-buttons" id="amp-auto-wrong-minus">
+                                <img src="img\down.svg" alt="" style="filter: invert();">
+                            </button>
+                        </div>
+                        </div>
+                        <div class="check-wrong-buttons">
+                            <button class="measurement-buttons" id="amp-auto-check-plus">
+                                <img src="img\up.svg" alt="" style="filter: invert();">
+                            </button>
+                            <button class="measurement-buttons" id="amp-auto-check-minus">
+                                <img src="img\down.svg" alt="" style="filter: invert();">
+                            </button>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    <div class="measurement-countainer">
+                        <h2 class="measurement-title">Realizou?</h2>
+                        <div class="checkbox-grid">
+    
+                            <div class="check">
+                                <input type="checkbox" id="leave" name="leave" value=1 class="checkbox">
+                                <label class="parameter-value-subtitle" for="leave"> LEAVE</label><br>
+                            </div>
+    
+                        </div>
+                        
+                    </div>
+
+                </div>
+
+
+
+
+        </div>
+
+    </section>
+    <!-- ======================= SEÇÃO TELEOP ======================= -->
+    <section id="teleop" class="tela">
+        <div class ="teleop">
+            <div>
+                <h1 class="state-title">TeleOperado</h1>
+            </div>
+
+            <div class="state-content">
+
+                <div class="measurement-countainer">
+                    <h2 class="measurement-title">SPEAKER</h2>
+                    <img src="img\note.png" class="note-image">
+                    <div class="measurement-grid">
+                        <div class="parameter-values">
+                            <h2 class="parameter-value-subtitle">ACERTOS</h2>
+                            <h2 class="parameter-value" id="speaker-teleop-check">0</h2>
+                        </div>
+                        <div class="parameter-values">
+                            <h2 class="parameter-value-subtitle">ERROS</h2>
+                            <h1 class="parameter-value" id="speaker-teleop-wrong">0</h1>
+                        </div>
+                    </div>
+                    <div class="global-buttons">
+                        <div class="check-wrong-buttons">
+                            <button class="measurement-buttons" id="speaker-teleop-wrong-plus">
+                                <img src="img\up.svg" alt="" style="filter: invert();">
+                            </button>
+                            <button class="measurement-buttons" id="speaker-teleop-wrong-minus">
+                                <img src="img\down.svg" alt="" style="filter: invert();">
+                            </button>
+                        </div>
+                        </div>
+                        <div class="check-wrong-buttons">
+                            <button class="measurement-buttons" id="speaker-teleop-check-plus">
+                                <img src="img\up.svg" alt="" style="filter: invert();">
+                            </button>
+                            <button class="measurement-buttons" id="speaker-teleop-check-minus">
+                                <img src="img\down.svg" alt="" style="filter: invert();">
+                            </button>
+                        </div>
+                    </div>
+
+
+                <div class="measurement-countainer">
+                    <h2 class="measurement-title">AMP</h2>
+                    <img src="img\note.png" class="note-image">
+                    <div class="measurement-grid">
+                        <div class="parameter-values">
+                            <h2 class="parameter-value-subtitle">ACERTOS</h2>
+                            <h2 class="parameter-value" id="amp-teleop-check">0</h2>
+                        </div>
+                        <div class="parameter-values">
+                            <h2 class="parameter-value-subtitle">ERROS</h2>
+                            <h1 class="parameter-value" id="amp-teleop-wrong">0</h1>
+                        </div>
+                    </div>
+                    <div class="global-buttons">
+                        <div class="check-wrong-buttons">
+                            <button class="measurement-buttons" id="amp-teleop-wrong-plus">
+                                <img src="img\up.svg" alt="" style="filter: invert();">
+                            </button>
+                            <button class="measurement-buttons" id="amp-teleop-wrong-minus">
+                                <img src="img\down.svg" alt="" style="filter: invert();">
+                            </button>
+                        </div>
+                        </div>
+                        <div class="check-wrong-buttons">
+                            <button class="measurement-buttons" id="amp-teleop-check-plus">
+                                <img src="img\up.svg" alt="" style="filter: invert();">
+                            </button>
+                            <button class="measurement-buttons" id="amp-teleop-check-minus">
+                                <img src="img\down.svg" alt="" style="filter: invert();">
+                            </button>
+                        </div>
+                    </div>
+                    
+                <div class="measurement-countainer">
+                    <div class="fault-container">
+                        <h2 class="measurement-title">Faltas</h2>
+                        <img src="img\fault.svg" class="fault-flag">
+                        <h1 class="parameter-value" id="fault-counter">0</h1>
+                        <div class="check-wrong-buttons">
+                            <button class="measurement-buttons" id="fault-plus">
+                                <img src="img\up.svg" alt="" style="filter: invert();">
+                            </button>
+                            <button class="measurement-buttons" id="fault-minus">
+                                <img src="img\down.svg" alt="" style="filter: invert();">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                    
+                    
+                    
+                </div>
+        </div>
+
+    </section>
+    <!-- ======================================= SEÇÃO ENDGAME ======================================= -->
+    <section id="endgame" class="tela">
+        <div class ="endgame">
+            <div>
+                <h1 class="state-title">Endgame</h1>
+            </div>
+            <!-- Inicio -->
+            <div class="state-content">
+
+                <div class="measurement-countainer">
+                    <h2 class="measurement-title">Realizou?</h2>
+                        <div class="checkbox-grid">
+    
+                            <div class="check">
+                                <input type="checkbox" id="park" name="park" value=1 class="checkbox">
+                                <label class="parameter-value-subtitle" for="leave"> PARK</label><br>
+                            </div>
+                            <div class="check">
+                                <input type="checkbox" id="onstage" name="onstage" value=1 class="checkbox">
+                                <label class="parameter-value-subtitle" for="leave"> ONSTAGE</label><br>
+                            </div>
+                            <div class="check">
+                                <input type="checkbox" id="harmony" name="harmony" value=1 class="checkbox">
+                                <label class="parameter-value-subtitle" for="leave"> HARMONY </label><br>
+                            </div>
+                            <div class="check">
+                                <input type="checkbox" id="trap" name="trap" value=1 class="checkbox">
+                                <label class="parameter-value-subtitle" for="leave"> NOTE in TRAP</label><br>
+                            </div>
+    
+                        </div>
+                </div>
+                <div class="measurement-countainer">
+                    <h2 class="measurement-title">Match Results</h2>
+                        <div class="checkbox-grid">
+    
+                            <div class="check">
+                                <input type="checkbox" id="melody" name="melody" value=1 class="checkbox">
+                                <label class="parameter-value-subtitle" for="leave">MELODY</label><br>
+                            </div>
+                            <div class="check">
+                                <input type="checkbox" id="ensemble" name="ensemble" value=1 class="checkbox">
+                                <label class="parameter-value-subtitle" for="leave">ENSEMBLE</label><br>
+                            </div>
+    
+                        </div>
+
+                        <div class="match-results-buttons" >
+                            <button id="lose-id" class="match-results-button" type="button"><span>Derrota</span></button>
+                            <button id="tie-id" class="match-results-button" type="button"><span>Empate</span></button>
+                            <button id="win-id"class="match-results-button" type="button"><span>Vitória</span></button>
+                        </div>
+    
+                        
+                </div>
+
+            </div>
+            <!-- Fim -->
+
+        </div>
+
+    </section>
+
+    <div class="popup" id="popup">
+        <div class="popup-inner">
+                <h2 class="popup-title">Dados enviados com sucesso!</h2>
+                <div class="submited-check-div">
+                    <img src="img/submited-check.svg" alt=""class="submited-check">
+                </div>
+                <button class="popup-button" id="close-popup">OK</button>
+
+
+        </div>
+    </div>
+    
+</body>
+<footer class="footer">
+    <h4>Made by João Pedro C. Silva (Programming mentor) from #9199</h4>
+</footer>
+<script src="main.js" type="module"></script>
+</html>
