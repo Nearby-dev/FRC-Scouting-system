@@ -1,8 +1,8 @@
-# FRC Scouting System
+# FRC Scouting System 🦈
 
 This is a scouting system for FRC that was developed with the intention of not needing internet for any operation whatsoever. Therefore, the system uses a localhost server that communicates with the scouting devices in the same way that robots communicate with the FMS.
 
-SESI SENAI SHARKS #9199
+🦈SESI SENAI SHARKS #9199🦈
 
 ## Índice
 
