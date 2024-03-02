@@ -22,8 +22,6 @@ Once everything is already installed, start the local server by typing in the te
 ```javascript
 node server.js
 ```
-All the data goes automatically to the data.csv archive. and on any updates on the database. It generates a .json backup file.
+All the data goes automatically to the [data.csv archive](data.csv). and on any updates on the database. It generates a .json backup file in the [backup](backup) folders.
 
-You can use Excel to open and manipulate the data.csv.
-
-
+You can use Excel to open and manipulate the [data.csv archive](data.csv)
